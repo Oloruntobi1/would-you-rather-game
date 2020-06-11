@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../App.css';
 import { connect } from "react-redux"
 import LoadingBar from "react-redux-loading"
-// import Nav from "./Nav"
+import Nav from "./Nav"
 import { Route } from "react-router-dom"
 import { handleInitialData } from "../actions/shared"
+import LeaderBoardPage from "./LeaderBoardPage"
+import AddQuestionPage from "./AddQuestionPage"
+import Dashboard from "./Dashboard"
+import QuestionDetailsPage from "./QuestionDetailsPage"
 
 
 class App extends Component{
@@ -18,12 +22,25 @@ class App extends Component{
     const { authedUser } = this.props
       if(authedUser === null){
         return ( 
+          <Fragment>
+            <LoadingBar />
+            <Nav />
           <p>Sign In</p>
+          </Fragment>
         )
       }
     return (
         <div className="App">
-          Show Me
+          <LoadingBar />
+          <Nav />
+          <div>
+              <Route exact path="/" render={() => (
+                <Dashboard />
+              )} />
+              <Route path="/add" component={AddQuestionPage} />
+              <Route path='/question/:question_id' component={QuestionDetailsPage} />
+              <Route path="/leaderboard" component={LeaderBoardPage} />
+            </div>
         </div>
     )
   }
