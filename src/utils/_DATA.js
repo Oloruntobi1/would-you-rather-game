@@ -2,7 +2,7 @@ let users = {
     sarahedo: {
       id: 'sarahedo',
       name: 'Sarah Edo',
-      avatarURL: ,
+      avatarURL: 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
     tylermcginnis: {
       id: 'tylermcginnis',
       name: 'Tyler McGinnis',
-      avatarURL: ,
+      avatarURL:'https://tylermcginnis.com/would-you-rather/tyler.jpg' ,
       answers: {
         "vthrdm985a262al8qx3do": 'optionOne',
         "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
     johndoe: {
       id: 'johndoe',
       name: 'John Doe',
-      avatarURL: ,
+      avatarURL: 'https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg',
       answers: {
         "xj352vofupe1dqz9emx13r": 'optionOne',
         "vthrdm985a262al8qx3do": 'optionTwo',
@@ -152,6 +152,9 @@ let users = {
       const authedUser = question.author;
       const formattedQuestion = formatQuestion(question);
   
+      console.log(formattedQuestion.id)
+      
+  
       setTimeout(() => {
         questions = {
           ...questions,
@@ -165,6 +168,8 @@ let users = {
             questions: users[authedUser].questions.concat([formattedQuestion.id])
           }
         }
+  
+        console.log(users)
   
         res(formattedQuestion)
       }, 1000)
