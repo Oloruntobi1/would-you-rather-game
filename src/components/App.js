@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import "../App.css";
-import { BrowserRouter as Router } from "react-router-dom"
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import Nav from "./Nav";

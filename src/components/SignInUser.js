@@ -32,7 +32,7 @@ class SignInUser extends Component{
     render(){
 
         const { loggedInUser } = this.state
-        console.log(this.props.users)
+        
         return (
             <div>
             <form onSubmit={this.handleSignIn}>

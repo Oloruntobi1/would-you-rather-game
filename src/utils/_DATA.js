@@ -152,7 +152,7 @@ let users = {
       const authedUser = question.author;
       const formattedQuestion = formatQuestion(question);
   
-      console.log(formattedQuestion.id)
+      // console.log(formattedQuestion.id)
       
   
       setTimeout(() => {
@@ -169,7 +169,7 @@ let users = {
           }
         }
   
-        console.log(users)
+        // console.log(users)
   
         res(formattedQuestion)
       }, 1000)

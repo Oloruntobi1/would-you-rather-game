@@ -2,7 +2,7 @@ import {getInitialData} from "../utils/api_helper"
 import { showLoading, hideLoading } from "react-redux-loading"
 import { receiveUsers } from "./users"
 import { receiveQuestions } from "./questions"
-import { setAuthedUser } from "./authedUser"
+
 
 export const RECEIVE_DATA = 'RECEIVE_DATA'
 

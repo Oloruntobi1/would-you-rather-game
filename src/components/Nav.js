@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+import LoggedInUser from "./LoggedInUser"
 
 class Nav extends Component {
   render() {
@@ -22,12 +23,32 @@ class Nav extends Component {
               Leader Board
             </NavLink>
           </li>
+          {
+        this.props.showSignedIn !== true && 
+       
+        this.props.userIds.map((id) => (
+                    
+          <LoggedInUser key={id} id={id}/>
+         
+      ))
+      }
+          
+      
+   
         </ul>
       </nav>
     );
   }
 }
 
-function mapStateToProps() {}
+function mapStateToProps({users, authedUser}){
 
-export default connect()(Nav);
+ 
+  return {
+   
+    showSignedIn : authedUser === null,
+    userIds: Object.keys(users)
+  }
+}
+
+export default connect(mapStateToProps)(Nav);
