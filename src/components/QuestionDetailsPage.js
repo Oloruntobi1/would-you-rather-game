@@ -46,9 +46,9 @@ class QuestionDetailsPage extends Component{
             
         })
 
-        console.log(answerz)
-        console.log(author)
-        console.log(this.props.question)
+        // console.log(answerz)
+        // console.log(author)
+        // console.log(this.props.question)
 
         
        
