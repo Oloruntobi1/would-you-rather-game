@@ -1,4 +1,4 @@
-# Online BookShelf
+# Would You Rather Game
 
 Would-you-rather game is a fun game for colleagues, peers or anybody you love competing healthily against generally. 
 
