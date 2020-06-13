@@ -40,7 +40,7 @@ class SignInUser extends Component{
                 <option value="selectUser">Select User</option>
                {
                  this.props.users.map((item) => (
-                   <option key={item.id} value={item.id}> {item.name} </option>
+                 <option key={item.id} value={item.id}> {item.name} </option>
                  ))
                }
               </select>

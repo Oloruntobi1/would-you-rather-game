@@ -13,7 +13,7 @@ class LoggedInUser extends Component{
     render() {
         const { user } = this.props
 
-        const { name, id} = user
+        const { name, avatarURL, id} = user
 
      
             return (
@@ -22,6 +22,7 @@ class LoggedInUser extends Component{
                         {
                     this.props.authedUser === id && (
                         <div>
+                            <img className="avatar" src={avatarURL} alt="logged in user"/>
                              <p>Hello, {name}</p>
                             <button onClick={this.setAuthedUserToNull}>Sign Out</button>
                         </div>

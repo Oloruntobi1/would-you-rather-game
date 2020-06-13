@@ -16,6 +16,7 @@ class Question extends Component {
 
                 <div>
                     <img 
+                    className="avatar"
                         src={avatarURL}
                         alt="The author of the question"
                     />
@@ -25,7 +26,8 @@ class Question extends Component {
                     <p>...{this.props.optionOne}...</p>
                     <Link to={`/question/${this.props.id}`}>
                
-                 View Poll
+               <button className="poll-btn"> View Poll</button>
+                
 
             </Link>
                 </div>
