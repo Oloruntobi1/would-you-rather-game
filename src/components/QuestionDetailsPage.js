@@ -77,6 +77,11 @@ class QuestionDetailsPage extends Component {
             <span>{`${len1} out of ${sum} votes`}</span>
             <p>{((len2 / sum) * 100).toFixed()}% votes</p>
             <span>{`${len2} out of ${sum} votes`}</span>
+            {
+              answerz[0].answers[this.props.qid] === "optionOne" ?
+              <p>You chose {this.props.question.optionOne.text}  </p>
+              : <p>You chose {this.props.question.optionTwo.text}</p>
+            }
 
             <form>
               <label>
@@ -86,8 +91,10 @@ class QuestionDetailsPage extends Component {
                   value="optionOne"
                   defaultChecked={
                     answerz[0].answers[this.props.qid] === "optionOne"
+                    
                   }
-                />{" "}
+                  disabled
+                />
                 {this.props.question.optionOne.text}
               </label>
 
@@ -99,7 +106,8 @@ class QuestionDetailsPage extends Component {
                   defaultChecked={
                     answerz[0].answers[this.props.qid] === "optionTwo"
                   }
-                />{" "}
+                  disabled
+                />
                 {this.props.question.optionTwo.text}
               </label>
             </form>
