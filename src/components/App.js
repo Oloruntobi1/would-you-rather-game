@@ -36,7 +36,7 @@ class App extends Component {
           <Route exact path="/" render={() => <Dashboard />} />
           <Route path="/add" component={AddQuestionPage} />
           <Route
-            path="/question/:question_id"
+            path="/questions/:question_id"
             component={QuestionDetailsPage}
           />
           <Route path="/leaderboard" component={LeaderBoardPage} />

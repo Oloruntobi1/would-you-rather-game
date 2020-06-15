@@ -20,7 +20,7 @@ class LeaderBoard extends Component{
                     newNewUsers.map((user) => (
                         <ScoreCard
                         key={user.id}
-                        imgURL={user.avatar}
+                        imgURL={user.avatarURL}
                         name={user.name}
                         answersLength={Object.keys(user.answers).length}
                         questionsLength={user.questions.length}

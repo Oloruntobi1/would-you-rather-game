@@ -3,13 +3,12 @@ import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 
 
-class Question extends Component {
+function Question (props){
 
    
 
-        render ()
-         {
-            const {  crafter } = this.props
+        
+            const {  crafter } = props
 
             const { name, avatarURL } = crafter
             return (
@@ -23,8 +22,8 @@ class Question extends Component {
                     
                     <p>{name} asks: </p>
                     <p>Would you rather</p>
-                    <p>...{this.props.optionOne}...</p>
-                    <Link to={`/question/${this.props.id}`}>
+                    <p>...{props.optionOne}...</p>
+                    <Link to={`/questions/${props.id}`}>
                
                <button className="poll-btn"> View Poll</button>
                 
@@ -33,8 +32,7 @@ class Question extends Component {
                 </div>
                 
             )
-        }
-
+       
     }
 
 

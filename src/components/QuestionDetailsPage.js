@@ -45,10 +45,13 @@ class QuestionDetailsPage extends Component {
       );
     });
 
-    // console.log(answerz)
-    // console.log(author)
-    console.log(this.props.question.optionOne.votes.length);
-    console.log(this.props.question.optionTwo.votes.length);
+    console.log(this.props.question)
+    if(this.props.question === null){
+      return <p>Question does not exist</p>
+    }
+
+  
+  
 
     const sum =
       this.props.question.optionOne.votes.length +
@@ -56,6 +59,7 @@ class QuestionDetailsPage extends Component {
     const len1 = this.props.question.optionOne.votes.length;
     const len2 = this.props.question.optionTwo.votes.length;
 
+  
     return (
       <div>
         <p>Asked by {author[0].name}</p>
@@ -136,11 +140,12 @@ class QuestionDetailsPage extends Component {
 
 function mapStateToProps({ questions, users, authedUser }, props) {
   const { question_id } = props.match.params;
+  const question = questions[question_id]
 
   return {
     qid: question_id,
     authedUser,
-    question: questions[question_id],
+    question: question ? question : null,
     userz: Object.values(users),
   };
 }
